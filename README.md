@@ -1,1 +1,1 @@
-# tldr-chatgpt
+# chatgpt-tldr

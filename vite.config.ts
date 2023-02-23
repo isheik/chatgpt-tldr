@@ -1,9 +1,10 @@
 import { crx, defineManifest } from "@crxjs/vite-plugin";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import { resolve } from "path";
 
 const manifest = defineManifest({
-  name: "TL;DR ChatGPT",
+  name: "ChatGPT TL;DR",
   version: "1.0.0",
   manifest_version: 3,
   description: "Summarize articles using ChatGPT",
@@ -28,4 +29,11 @@ const manifest = defineManifest({
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), crx({ manifest })],
+  build: {
+    rollupOptions: {
+      input: {
+        app: "index.html", // default
+      },
+    },
+  },
 });
