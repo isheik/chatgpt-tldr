@@ -1,7 +1,6 @@
 import { crx, defineManifest } from "@crxjs/vite-plugin";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import { resolve } from "path";
 
 const manifest = defineManifest({
   name: "ChatGPT TL;DR",
@@ -9,14 +8,14 @@ const manifest = defineManifest({
   manifest_version: 3,
   description: "Summarize articles using ChatGPT",
   icons: {
-    16: "img/icon16.png",
-    48: "img/icon48.png",
-    128: "img/icon128.png",
+    16: "src/assets/icon16.png",
+    48: "src/assets/icon48.png",
+    128: "src/assets/icon128.png",
   },
   permissions: [],
   action: {
-    default_icon: "img/icon16.png",
-    default_popup: "index.html",
+    default_icon: "src/assets/icon16.png",
+    default_popup: "src/popup/popup.html",
   },
   // content_scripts: [
   //   {
