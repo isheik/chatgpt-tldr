@@ -1,16 +1,14 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import { useCallback } from "react";
 import useSWR from "swr";
-import Browser from "woebextensin-polyfill";
+import Browser from "webextension-polyfill";
 import { GearIcon, GlobeIcon } from "@primer/octicons-react";
 import "../tailwind.css";
-import App from "../App";
-import logo from "assets/icon128.png";
 
 export default function Popup(): ReactElement {
   const accessTokenQuery = useSWR(
     "accessToken",
-    () => Browser.runtime.sendMesage({ type: "GET_ACCESS_TOKEN" }),
+    () => Browser.runtime.sendMessage({ type: "GET_ACCESS_TOKEN" }),
     { shouldRetryOnError: false }
   );
 
